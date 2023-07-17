@@ -1,0 +1,267 @@
+:root{
+	--color-pallet-5 : #e0d57d;
+	--color-pallet-4 : #E5E5E5;
+	--color-pallet-3 : #ef246e;
+	--color-pallet-2 : #343d46;
+	--color-pallet-1 : #262626;
+}
+
+body{
+	margin: 0;
+}
+
+a{
+	color: inherit;
+}
+
+#container{
+	width: 100%;
+	height: 100%;
+}
+
+#container > div#left, #container > div#right{
+	height: 100%;
+	width: 50%;
+	position: absolute;
+}
+
+#left{
+	background-color:  var(--color-pallet-5);
+}
+
+#right{
+	background-color:  var(--color-pallet-1);
+	left: 50%;
+}
+
+#container > div > div.inner{
+	position: absolute;
+	bottom:0;
+	top:0;
+	left:0;
+	right:0;
+	overflow: hidden;
+}
+
+#container > div#left > div.inner{
+	background-color: var(--color-pallet-4);
+	margin: 15px 0px 15px 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#container > div#right > div.inner{
+	background-color: var(--color-pallet-2);
+	margin: 15px 15px 15px 0px;
+}
+
+pre{
+	padding-left: 30px;
+	white-space: break-spaces;
+	font-size: 17px;
+	line-height: 25px;
+	font-weight: bold;
+	color: #ffffff;
+	cursor: text;
+}
+
+#json{
+	max-height: 100%;
+	overflow-y: auto;
+}
+
+.key{
+	color: var(--color-pallet-3);
+}
+
+.value{
+	color: var(--color-pallet-5);
+}
+
+.line{
+	color: white;
+	padding-left: 5px;
+	padding-right: 5px;
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+#profil{
+	width: 300px;
+	height: 300px;
+	border: 10px var(--color-pallet-1) solid;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 100%;
+}
+
+#profil > img{
+	width: 300px;
+	height: 300px;
+	border-radius: 100%;
+}
+
+#profil:after{
+	position: absolute;
+	content: '';
+	border: 10px solid var(--color-pallet-2);
+	border-radius: 100%;
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+#name, #job{
+	font-size: 40px;
+	color: var(--color-pallet-3);
+	font-weight: bold;
+	font-family: monospace;
+	height: 50px;
+	line-height: 50px;
+	margin: 0;
+  	white-space: nowrap;
+	
+}
+
+#job{
+	width: 26ch;
+  	animation: typing 3s steps(26), blink .5s step-end infinite alternate;
+  	overflow: hidden;
+  	border-right: 3px solid;
+}
+
+#social-buttons{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.social-button{
+	margin: 10px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 64px;
+	height: 64px;
+	text-decoration: none;
+	border-radius: 100%;
+	background: #fff;
+	text-align: center;
+}
+
+.social-button::after{
+	content: '';
+	position: absolute;
+	top: -1px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 100%;
+	transition: 0.3s;
+}
+
+.social-button:focus, .social-button:hover{
+	color: #fff;
+}
+
+.social-button:focus::after, .social-button:hover::after{
+	width: calc(100% + 2px);
+	height: calc(100% + 2px);
+	margin-left: calc(-50% - 1px);
+}
+
+.social-button i{
+	position: relative;
+	z-index: 1;
+	transition: 0.3s;
+}
+
+.social-button i{
+	font-size: 25.6px;
+}
+
+.social-linkedin{
+	color: #0077b5;
+}
+
+.social-linkedin::after{
+	background: #0077b5;
+}
+
+.social-github{
+	color: #6e5494;
+}
+
+.social-github::after{
+	background: #6e5494;
+}
+
+.social-twitter{
+	color: #55acee;
+}
+
+.social-twitter::after{
+	background: #55acee;
+}
+
+.social-mail{
+	color: #0072c6;
+}
+
+.social-mail::after{
+	background: #0072c6;
+}
+
+@keyframes typing{
+	from {
+		width: 0
+	}
+}
+    
+@keyframes blink{
+	50% {
+		border-color: transparent
+  	}
+}
+
+@media (max-width: 1250px){
+	#right{
+		left: 0%;
+		top: 50%;
+	}
+
+	#left{
+		top: 0%;
+	}
+
+	#container > div#left, #container > div#right{
+		height: 50%;
+		width: 100%;
+		position: absolute;
+	}
+
+	#container > div#left > div.inner{
+		margin: 15px 15px 0px 15px;
+	}
+
+	#container > div#right > div.inner{
+		margin: 0px 15px 15px 15px;
+	}
+}
