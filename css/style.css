@@ -17,12 +17,14 @@ a{
 #container{
 	width: 100%;
 	height: 100%;
+	position:absolute;
+	overflow: hidden;
 }
 
 #container > div#left, #container > div#right{
-	height: 100%;
 	width: 50%;
-	position: absolute;
+	float: left;
+	position: relative;
 }
 
 #left{
@@ -31,7 +33,6 @@ a{
 
 #right{
 	background-color:  var(--color-pallet-1);
-	left: 50%;
 }
 
 #container > div > div.inner{
@@ -59,7 +60,6 @@ a{
 
 pre{
 	padding-left: 30px;
-	white-space: break-spaces;
 	font-size: 17px;
 	line-height: 25px;
 	font-weight: bold;
@@ -132,16 +132,19 @@ pre{
 	color: var(--color-pallet-3);
 	font-weight: bold;
 	font-family: monospace;
-	height: 50px;
 	line-height: 50px;
 	margin: 0;
-  	white-space: nowrap;
-	
 }
 
 #job{
-	width: 26ch;
-  	animation: typing 3s steps(26), blink .5s step-end infinite alternate;
+	text-align: center;
+}
+
+#name{
+	white-space: nowrap;
+	height: 50px;
+	width: 11ch;
+  	animation: typing 2s steps(11), blink .5s step-end infinite alternate;
   	overflow: hidden;
   	border-right: 3px solid;
 }
@@ -149,7 +152,7 @@ pre{
 #social-buttons{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 
 .social-button{
@@ -241,20 +244,21 @@ pre{
   	}
 }
 
-@media (max-width: 1250px){
-	#right{
-		left: 0%;
-		top: 50%;
+@media (min-width: 1251px){
+	#container > div#left, #container > div#right{
+		height: 100% !important;
 	}
+}
 
+@media (max-width: 1250px){
 	#left{
 		top: 0%;
 	}
 
 	#container > div#left, #container > div#right{
 		height: 50%;
-		width: 100%;
-		position: absolute;
+		width: 100% !important;
+		position: relative;
 	}
 
 	#container > div#left > div.inner{
