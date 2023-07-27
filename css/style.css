@@ -59,17 +59,19 @@ a{
 }
 
 pre{
-	padding-left: 30px;
-	font-size: 17px;
-	line-height: 25px;
+	padding-left: 10px;
+	font-size: 16px;
+	line-height: 21px;
 	font-weight: bold;
 	color: #ffffff;
 	cursor: text;
 }
 
 #json{
+	width: 100%;
 	max-height: 100%;
-	overflow-y: auto;
+	margin-top: auto;
+	margin-bottom: auto;
 }
 
 .key{
@@ -230,6 +232,11 @@ pre{
 
 .social-mail::after{
 	background: #0072c6;
+}
+
+#container > div#right > div.inner{
+	display: flex;
+	overflow: auto;
 }
 
 @keyframes typing{
